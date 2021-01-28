@@ -1,0 +1,36 @@
+.g-clock{
+    display: flex;
+    height: 70px;
+    width: 300px;
+    border: 2px solid rgb(80, 182, 182);
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    .g-clock-time{
+    }
+    .g-clock-time span{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 50px;
+        color: rgb(80, 182, 182);
+    }
+    .g-clock-time span:last-child{
+        font-size: 30px;
+    }
+    .g-clock-symbol{
+        padding: 0 5px;
+        color: rgb(80, 182, 182);
+    }
+    .g-clock-date{
+        margin-left: 20px;
+        &-week{
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(80, 182, 182);
+        }
+        &-day{
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(80, 182, 182);
+        }
+    }
+}
