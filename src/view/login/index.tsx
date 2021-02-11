@@ -14,7 +14,7 @@ function Login(props: { history: any; }) {
         })
         .then(() => {
             setLoading(false);
-            history.push('/');
+            history.push('/dashboard');
         })
         .catch(() => {
             setLoading(false);

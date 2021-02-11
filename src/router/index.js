@@ -7,6 +7,10 @@ import Dashboard from '@/view/dashboard';
 import ErrorDataList from '@/view/monitor/errorDataList';
 import ServerList from '@/view/monitor/serverList';
 
+
+// 系统管理
+import RoleManagement from '@/view/system/roleManagement';
+
 const routes = [
     {
         path: '/login',
@@ -36,6 +40,11 @@ const routes = [
             {
                 path: '/serverList',
                 component: ServerList
+            },
+
+            {
+                path: '/roleManagement',
+                component: RoleManagement
             },
         ]
     },
