@@ -11,7 +11,6 @@ const Dashborad = () => {
                 <ChatsPieData />
                 <ChatsPieData />
             </div>
-            
         </div>
     );
 }

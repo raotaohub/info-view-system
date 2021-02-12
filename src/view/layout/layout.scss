@@ -8,68 +8,78 @@
         width: 100%;
         height: 60px;
         top: 0;
-        background-color: rgb(25, 42, 90);
-        border-bottom: 2px solid rgb(58, 134, 204);
+        
     }
     &-main{
         display: flex;
         height: 100%;
         .left-nav{
             height: 100%;
-            width: 220px;
+            // width: 220px;
             box-sizing: border-box;
-            border-right: 2px solid rgb(12, 72, 107);
+            border-right: 2px solid rgb(230, 230, 230);
             overflow: hidden;
-            background: rgb(25, 42, 90);
+            // background: rgb(25, 42, 90);
             .left-nav-wrap{
+                position: relative;
                 overflow-x: hidden;
                 overflow-y: auto;
-                width: 230px;
+                // width: 230px;
                 height: 100%;
             }
         }
         .right-content{
             flex: 1;
             height: 100%;
+            position: relative;
+            padding-top: 40px;
             overflow: auto;
+            .breadcrumb-box{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 40px;
+                left: 0;
+                border-bottom: 1px solid #ddd;
+            }
         }
     }
 
-    .ant-menu{
-        .ant-menu-item{
-            color: rgb(0, 174, 255);
-        }
-        .ant-menu-item:active{
-            background-color: rgb(0, 174, 255);
-        }
-        li > div:active{
-            //  最外层菜单点击效果
-            background-color: #59b1bd93 !important;
-        }
-        .ant-menu-submenu-title{
-            // 外层菜单标题样式
-            color: rgb(0, 174, 255);
-        }
-        .ant-menu-submenu-expand-icon, .ant-menu-submenu-arrow{
-            // 外层菜单下拉箭头默认样式
-            color: rgb(39, 112, 146);
-        }
-        .ant-menu-sub.ant-menu-inline{
-            //  子项菜单样式
-            background-color: rgb(15, 37, 70);
-            color: rgb(189, 214, 214);
-        }
-        .ant-menu-item-active{
-            color: aqua;
-        }
-        .ant-menu-sub.ant-menu-inline .ant-menu-item-group-title{
-            // 更改菜单组标题样式
-            color: rgb(6, 205, 255);
-        }
-    }
-    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
-        // 子项选择样式
-        background: rgb(18, 86, 131);
-        color: aqua;
-    }
+    // .ant-menu{
+    //     .ant-menu-item{
+    //         color: rgb(0, 174, 255);
+    //     }
+    //     .ant-menu-item:active{
+    //         background-color: rgb(0, 174, 255);
+    //     }
+    //     li > div:active{
+    //         //  最外层菜单点击效果
+    //         background-color: #59b1bd93 !important;
+    //     }
+    //     .ant-menu-submenu-title{
+    //         // 外层菜单标题样式
+    //         color: rgb(0, 174, 255);
+    //     }
+    //     .ant-menu-submenu-expand-icon, .ant-menu-submenu-arrow{
+    //         // 外层菜单下拉箭头默认样式
+    //         color: rgb(39, 112, 146);
+    //     }
+    //     .ant-menu-sub.ant-menu-inline{
+    //         //  子项菜单样式
+    //         background-color: rgb(15, 37, 70);
+    //         color: rgb(189, 214, 214);
+    //     }
+    //     .ant-menu-item-active{
+    //         color: aqua;
+    //     }
+    //     .ant-menu-sub.ant-menu-inline .ant-menu-item-group-title{
+    //         // 更改菜单组标题样式
+    //         color: rgb(6, 205, 255);
+    //     }
+    // }
+    // .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    //     // 子项选择样式
+    //     background: rgb(18, 86, 131);
+    //     color: aqua;
+    // }
 }

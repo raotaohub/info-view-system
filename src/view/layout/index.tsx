@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react';
 import { renderRoutes } from 'react-router-config';
-import { Menu } from 'antd';
+import { Button, Menu } from 'antd';
+import {
+    MenuUnfoldOutlined,
+    MenuFoldOutlined,
+  } from '@ant-design/icons';
+
 
 import './layout.scss';
 
 import { getDefaultMenuKeys, routeMap } from '../../utils/routerHandle';
 import { renderMenu } from '../../utils/renderMenu';
+import Header from './header/index';
+import { useState } from 'react';
 
-export const Layout = (props:any) => {
+export const Layout = (props: { props: { history?: any; route?: any; location?: any; }; }) => {
     
     const {route, location} = props.props;
     const {defaultSelectedKeys, defaultOpenKeys} = getDefaultMenuKeys(location.pathname);
 
 
-    const handleClick = (e:any) => {
+    const handleClick = (e: { key: any; }) => {
         console.log('click ', e);
         props.props.history.push(e.key)
     }
@@ -23,21 +29,34 @@ export const Layout = (props:any) => {
     //     setOpenKey([...e]);
     // }
 
+    const [collapsed, setCollapsed] = useState(false);
+
+    const toggleCollapsed = () => {
+        setCollapsed(!collapsed);
+    }
+
     return (
         <div className="g-layout">
-            <div className="g-layout-header"></div>
+            <div className="g-layout-header">
+                <Header {...props}></Header>
+            </div>
             <div className="g-layout-main">
-                <div className="left-nav">
-                    <div className="left-nav-wrap">
+                <div className="left-nav" style={{width: !collapsed ? 220 : 50}}>
+                    <div className="left-nav-wrap" style={{width: !collapsed ? 230 : 60}}>
+                        <div style={{textAlign: !collapsed ? 'right':'center'}}>
+                            <Button type={'text'} onClick={toggleCollapsed} style={{ marginBottom: 8, marginTop: 8, }}>
+                                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                            </Button>
+                        </div>
                         <Menu
                             // onOpenChange={handleOpen}
                             onClick={handleClick}
-                            style={{ width: 230, background: 'transparent', height: "100%" }}
+                            style={{ width: !collapsed ? 230 : 60, background: 'transparent', height: "100%" }}
                             defaultSelectedKeys={[...defaultSelectedKeys]}
                             defaultOpenKeys={[...defaultOpenKeys]}
                             mode="inline"
+                            inlineCollapsed={collapsed}
                         >
-
                             {renderMenu(routeMap)}
                             {/* <Menu.Item key="/dashboard" icon={<DashboardOutlined />}>仪表盘</Menu.Item>
                             <SubMenu key="sub1" icon={<AreaChartOutlined />} title="数据监控">
@@ -62,6 +81,7 @@ export const Layout = (props:any) => {
                     </div>
                 </div>
                 <div className="right-content">
+                    <div className="breadcrumb-box"></div>
                     {renderRoutes(route.routes)}
                 </div>
             </div>
