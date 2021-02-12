@@ -1,5 +1,6 @@
-import { Button, Table } from "antd"
+import { Button, Table, Modal } from "antd"
 import { ColumnsType } from "antd/lib/table";
+import { useState } from "react";
 import styled from 'styled-components';
 
 interface roleList {
@@ -30,36 +31,55 @@ const list: roleList[] = [
     }
 ];
 
-const columns: ColumnsType<roleList> = [
-    {
-        dataIndex: 'id',
-        title: '序号'
-    },
-    {
-        dataIndex: 'name',
-        title: '角色名称'
-    },
-    {
-        dataIndex: 'department',
-        title: '所属部门'
-    },
-    {
-        dataIndex: 'crateTime',
-        title: '创建时间'
-    },
-    {
-        title: '操作',
-        align: 'center',
-        render: (value) => {
-            return <Button type={'link'}>修改</Button>
-        }
-    }
-]
+
 
 export default function RoleManagement() {
+    const [visible, setVisible] = useState(false);
+
+    const columns: ColumnsType<roleList> = [
+        {
+            dataIndex: 'id',
+            title: '序号'
+        },
+        {
+            dataIndex: 'name',
+            title: '角色名称'
+        },
+        {
+            dataIndex: 'department',
+            title: '所属部门'
+        },
+        {
+            dataIndex: 'crateTime',
+            title: '创建时间'
+        },
+        {
+            title: '操作',
+            align: 'center',
+            render: (value) => {
+                return <Button type={'link'} onClick={() => setVisible(true)}>修改</Button>
+            }
+        }
+    ]
+
     return (
         <Containor>
-            <Table size={'small'} bordered columns={columns} dataSource={list} ></Table>
+            <Table rowKey={rowkey => rowkey.id} size={'small'} bordered columns={columns} dataSource={list} ></Table>
+
+            <Modal
+                title="修改角色信息"
+                okText="确定"
+                cancelText="返回"
+                centered
+                visible={visible}
+                onOk={() => setVisible(false)}
+                onCancel={() => setVisible(false)}
+                width={1000}
+            >
+                <p>some contents...</p>
+                <p>some contents...</p>
+                <p>some contents...</p>
+            </Modal>
         </Containor>
     )
 }
