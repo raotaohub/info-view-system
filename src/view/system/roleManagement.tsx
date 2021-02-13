@@ -2,6 +2,7 @@ import { Button, Table, Modal } from "antd"
 import { ColumnsType } from "antd/lib/table";
 import { useState } from "react";
 import styled from 'styled-components';
+import { Title } from "../../components/Title";
 
 interface roleList {
     id: number;
@@ -64,10 +65,11 @@ export default function RoleManagement() {
 
     return (
         <Containor>
+            <Title title={'角色菜单权限管理'} />
             <Table rowKey={rowkey => rowkey.id} size={'small'} bordered columns={columns} dataSource={list} ></Table>
 
             <Modal
-                title="修改角色信息"
+                title="修改角色菜单权限"
                 okText="确定"
                 cancelText="返回"
                 centered
@@ -86,7 +88,6 @@ export default function RoleManagement() {
 
 
 const Containor = styled.div`
-    min-height: 100%;
     background-color: rgb(255, 255, 255);
-    padding: 20px;
+    padding: 10px;
 `;

@@ -82,7 +82,7 @@ export const Layout = (props: { props: { history?: any; route?: any; location?: 
                 </div>
                 <div className="right-content">
                     <div className="breadcrumb-box"></div>
-                    {renderRoutes(route.routes)}
+                    <div style={{height: '100%', overflow: 'auto'}}>{renderRoutes(route.routes)}</div>
                 </div>
             </div>
         </div>

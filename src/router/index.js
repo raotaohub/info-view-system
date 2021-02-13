@@ -7,9 +7,12 @@ import Dashboard from '@/view/dashboard';
 import ErrorDataList from '@/view/monitor/errorDataList';
 import ServerList from '@/view/monitor/serverList';
 
+// 大屏
+import DataMonitor from '../view/bigScreen/dataMonitor';
 
 // 系统管理
 import RoleManagement from '@/view/system/roleManagement';
+
 
 const routes = [
     {
@@ -46,6 +49,13 @@ const routes = [
                 path: '/roleManagement',
                 component: RoleManagement
             },
+
+            {
+                path: '/dataMonitor',
+                component: DataMonitor
+            },
+
+            
         ]
     },
     

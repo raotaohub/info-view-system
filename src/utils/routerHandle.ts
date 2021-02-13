@@ -44,7 +44,7 @@ export const routeMap = [
                 isGroup: true,
                 children: [
                     {
-                        path: '/1',
+                        path: '/dataMonitor',
                         title: '数据监控',
                         isItem: true,
                     }
