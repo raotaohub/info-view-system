@@ -9,9 +9,11 @@ import ServerList from '@/view/monitor/serverList';
 
 // 大屏
 import DataMonitor from '../view/bigScreen/dataMonitor';
+import DataMonitorComponent from '../view/bigScreen/dataMonitorComponent';
 
 // 系统管理
 import RoleManagement from '@/view/system/roleManagement';
+
 
 
 const routes = [
@@ -51,8 +53,15 @@ const routes = [
             },
 
             {
+                exact: true,
                 path: '/dataMonitor',
                 component: DataMonitor
+            },
+
+            {
+                exact: true,
+                path: '/dataMonitor/:screenId',
+                component: DataMonitorComponent
             },
 
             

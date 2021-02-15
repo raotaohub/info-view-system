@@ -5,7 +5,7 @@ import ScreenImg from '../../assets/img/screen.png';
 import { Button, Card, Col, Row } from "antd";
 import React from "react";
 
-export default function DataMonitor() {
+export default function DataMonitor(props: any) {
     return (
         <Containor>
             <Title title={"数据监控"}></Title>
@@ -19,7 +19,7 @@ export default function DataMonitor() {
                     headStyle={{color: 'rgb(26, 115, 199)',padding: '0 10px'}}
                     cover={<img src={ScreenImg} alt='' />}
                     actions={[
-                        <Button type={'link'}>打开</Button>,
+                        <Button type={'link'} onClick={() => props.history.push('/dataMonitor/110234')}>打开</Button>,
                         <Button type={'link'} style={{color: 'red'}}>删除</Button>
                         
                     ]} />
